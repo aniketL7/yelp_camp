@@ -14,7 +14,8 @@ var express = require("express"),
 mongoose.connect("mongodb+srv://aniket:aniket@123@cluster0.b0tev.mongodb.net/yelp_camp?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 }).then(() => {
     console.log("Connected to the db");
 }).catch(err => {

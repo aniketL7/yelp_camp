@@ -11,7 +11,7 @@ var express = require("express"),
     User = require("./models/user.js"),
     seedDB = require("./seeds");
 
-mongoose.connect("mongodb+srv://aniket:aniket@123@cluster0.b0tev.mongodb.net/yelp_camp?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DATABASEURL , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -22,6 +22,7 @@ mongoose.connect("mongodb+srv://aniket:aniket@123@cluster0.b0tev.mongodb.net/yel
     console.log("ERROR:",err.message);
 });
 
+console.log(process.env.DATABASEURL);
 
 // requiring routes
 var commentRoutes = require("./routes/comments"),
